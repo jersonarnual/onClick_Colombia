@@ -1,0 +1,14 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net7.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\OnClick.Data\OnClick.Data.csproj" />
+    <ProjectReference Include="..\OnClick.Infraestructure\OnClick.Infraestructure.csproj" />
+  </ItemGroup>
+
+</Project>
