@@ -1,9 +1,10 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore;
 using OnClick.Data.Models;
 
 namespace OnClick.Data.Context
 {
-    public class OnClickContext : DbContext
+    public class OnClickContext : IdentityDbContext
     {
         public OnClickContext()
         {
@@ -18,6 +19,11 @@ namespace OnClick.Data.Context
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
+
+            modelBuilder.Entity<User>()
+            .HasOne(t => t.ApplicationUser)
+            .WithOne(u => u.User)
+            .HasForeignKey<User>(t => t.ApplicationUserId);
 
         }
     }
